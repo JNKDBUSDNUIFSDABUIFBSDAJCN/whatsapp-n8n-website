@@ -53,8 +53,11 @@ const statusText = document.getElementById('reply-status');
 
 sendBtn.addEventListener('click', async() => {
     const url = N8N_WEBHOOK_URL;
-    const to = replyToInput.value.trim();
+    let to = replyToInput.value.trim();
     const message = replyMessageInput.value.trim();
+
+    // Clean phone number for WhatsApp API (remove + and spaces)
+    to = to.replace(/[^0-9]/g, '');
 
     if (!url || url.includes('your-n8n.com')) {
         showStatus('Please configure your actual n8n Webhook URL in script.js (line 33).', 'error');

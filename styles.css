@@ -28,15 +28,15 @@ body {
     color: var(--text-main);
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 
 .app-container {
     width: 100%;
     max-width: 1000px;
     height: 90vh;
-    margin: 0 auto;
+    min-height: 620px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 24px;

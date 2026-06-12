@@ -46,10 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        let phone = selectedOption.getAttribute('data-phone');
+        if (phone) phone = phone.replace(/[^0-9]/g, '');
+
         const payload = {
             id: selectedOption.value,
             name: selectedOption.getAttribute('data-name'),
-            phone: selectedOption.getAttribute('data-phone'),
+            phone: phone,
             message: selectedOption.getAttribute('data-message'),
             timestamp: new Date().toISOString()
         };
@@ -101,8 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Custom Message submission
     customSendBtn.addEventListener('click', async() => {
-        const number = customNumber.value.trim();
+        let number = customNumber.value.trim();
         const message = customMessage.value.trim();
+
+        // Clean phone number for WhatsApp API (remove + and spaces)
+        number = number.replace(/[^0-9]/g, '');
 
         if (!number || !message) {
             showStatus('Please provide both a number and a message.', 'error');
