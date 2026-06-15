@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const customBtnText = customSendBtn.querySelector('span');
 
     // Webhook URLs (Replace with your actual n8n Webhook Test/Production URLs)
-    const WEBHOOK_URL = 'http://localhost:5678/webhook-test/0d410998-2662-41f8-bf4c-3b323f96d524';
-    const CUSTOM_WEBHOOK_URL = 'http://localhost:5678/webhook-test/0d410998-2662-41f8-bf4c-3b323f96d524'; // Separate endpoint
+    const WEBHOOK_URL = 'https://dineshd098743.app.n8n.cloud/webhook-test/2edb8d58-2712-46e3-a5f2-8d7062c6052f';
+    const CUSTOM_WEBHOOK_URL = 'https://dineshd098743.app.n8n.cloud/webhook-test/a9f33bcf-0a01-49dc-be65-4fa3f6cecbab'; // Separate endpoint
 
     // Show preview when a contact is selected
     contactSelect.addEventListener('change', (e) => {
